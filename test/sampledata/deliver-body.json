@@ -1,0 +1,111 @@
+{
+    "params": {
+        "channel": {
+            "name": "BillyVancouverLo",
+            "description": "channel_instance",
+            "type": "Facebook_ICE4E",
+            "url": "https://www.facebook.com/pages/Billy-Vaudens-Swinging-Crabs/145631788978852",
+            "id": "931",
+            "location": "b99151cd-3175-422d-bbf1-4250c9024103",
+            "state": "active"
+        },
+        "device": "5144346c-a972-4fa0-af52-b37d1adabb2c",
+        "schedule": "bb55cd30-7efb-4591-8ace-8289b4456cd4",
+        "touchpoint": "5144346c-a972-4fa0-af52-b37d1adabb2c"
+    },
+    "playlist": [
+        {
+            "startDate": "2015-01-01T00:00:00.000Z",
+            "endDate": "2015-01-09T19:30:00.000Z",
+            "time": {
+                "startTime": "2015-01-01T00:00:00.000Z",
+                "endTime": "2015-01-09T19:30:00.000Z"
+            },
+            "scObj": {
+                "repo": "dexit",
+                "url": "http://developer.scc.dexit.co/repos/dexit/smartcontent/object/ca9e74b6-d275-4472-be9c-e49257eabac5",
+                "id": "ca9e74b6-d275-4472-be9c-e49257eabac5",
+                "kind": "smartcontent#object",
+                "property": {
+                    "name": "AJTest2",
+                    "class": "dcm"
+                }
+            },
+            "params": [
+                {
+                    "key": "group",
+                    "value": "[]"
+                },
+                {
+                    "key": "key",
+                    "value": "1"
+                },
+                {
+                    "key": "layout",
+                    "value": "2b8f0647-f248-47e7-98cc-657371478e03"
+                }
+            ],
+            "order": [],
+            "layout": "<html><body>\n            \n            \n\n            \n                <div id=\"mmElementsPanel\" class=\"mmElementsPanel\">\n\n                    <div data-bind=\"foreach: $root.layoutVM.listOfItems\">\n                        \n                        \n                        \n                        \n                        \n                    \n                        \n                        \n                        \n\n                            <br><span style=\"z-index: 5; position: relative; padding: 5px; left: 22px; top: 199px; background-color: rgba(0, 0, 0, 0);\" class=\"editableTextBox editable ui-droppable ui-draggable editable-click\" data-type=\"text\" data-bind=\"drop:{value: $root.layoutVM.selectedElement.bind(id, $data, &apos;&apos;)}, dragMM: {value:$data}, editable: content().content, editableOptions:{placeholder: &apos;Type..&apos;, url: function(content){$root.layoutVM.editText(content)}, display: function(content){$root.layoutVM.displayText(content, id)}, name: tag, onblur:&apos;ignore&apos;} , style:{position: &apos;relative&apos;, left: leftPos+&apos;%&apos;, top: topPos+&apos;%&apos;}, attr:{id: id, &apos;data-mm-tag&apos;: tag}, text: content().content\" id=\"2\" data-mm-tag=\"mm-2\" data-original-title=\"\" title=\"\">Toronto announcement:  Winner! Mary</span>\n                        \n                    </div>\n                </div>\n                <div data-bind=\"foreach: $root.layoutVM.listOfItems\">\n                    \n                    \n                            <span>\n                            \n                            \n                            <img class=\"bgImage img-responsive ui-droppable\" data-bind=\"drop:{value: $root.layoutVM.selectedElementBG.bind(id, $data)}, attr:{id: id, src: src().src, &apos;data-mm-tag&apos;: tag}\" id=\"0\" src=\"http://dam.dexit.co.s3.amazonaws.com/developer/img/torontoas2.jpg\" data-mm-tag=\"mm-0\">\n                            \n                            \n                            </span>\n\n                            \n                    \n                    \n                    \n                \n                    \n                    \n                </div>\n\n            \n        </body></html>",
+            "layoutId": "2b8f0647-f248-47e7-98cc-657371478e03",
+            "multimedia": {
+                "text": [
+                    {
+                        "url": "http://developer.scc.dexit.co/repos/dexit/multimediabody/textbody/ea970f46-f144-46b8-b7d7-e4780d231246",
+                        "id": "ea970f46-f144-46b8-b7d7-e4780d231246",
+                        "kind": "multimediabody#text",
+                        "property": {
+                            "isAssignedTo": [
+                                "http://dexit.co/smartcontent/ca9e74b6-d275-4472-be9c-e49257eabac5",
+                                "http://dexit.co/smartcontent/ca9e74b6-d275-4472-be9c-e49257eabac5"
+                            ],
+                            "name": "Toronto announcement:  {{contest_material.current_msg}}",
+                            "content": "Toronto announcement:  Winner! Mary",
+                            "context": "device",
+                            "identity": "",
+                            "class": "",
+                            "tag": "mm-2",
+                            "location": "",
+                            "disabled": "false",
+                            "readonly": "false",
+                            "runtime": {
+                                "variables": [
+                                    {
+                                        "text": [
+                                            "{{contest_material.current_msg}}",
+                                            "contest_material.current_msg"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "image": [
+                    {
+                        "url": "http://developer.scc.dexit.co/repos/dexit/multimediabody/imagebody/3d556ff0-8b97-4a0e-9531-714f36d70324",
+                        "id": "3d556ff0-8b97-4a0e-9531-714f36d70324",
+                        "kind": "multimediabody#image",
+                        "property": {
+                            "isAssignedTo": "http://dexit.co/smartcontent/ca9e74b6-d275-4472-be9c-e49257eabac5",
+                            "name": "dcmIMage",
+                            "context": "device",
+                            "identity": "",
+                            "class": "",
+                            "tag": "mm-0",
+                            "location": "http://dam.dexit.co.s3.amazonaws.com/developer/img/torontoas2.jpg",
+                            "alt": "",
+                            "ismap": "false",
+                            "usemap": "false",
+                            "width": "",
+                            "height": ""
+                        }
+                    }
+                ],
+                "video": [],
+                "audio": [],
+                "link": []
+            }
+        }
+    ]
+}

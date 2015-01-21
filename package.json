@@ -1,0 +1,43 @@
+{
+  "name": "tpe-channel-base-handler",
+  "version": "0.2.3",
+  "description": "Base implementation for third party channel handlers",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:/dexinc/tpe-channel-base-handler.git"
+  },
+  "keywords": [],
+  "author": "DEX Inc.",
+  "contributors": [
+    {
+      "name": "Andrew Johnson",
+      "email": "andrew.johnson@dexit.co"
+    }
+  ],
+  "license": "proprietary",
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "express": "4.9.x",
+    "morgan": "^1.0.1",
+    "underscore": "1.6.x",
+    "winston": "^0.8.3"
+  },
+  "devDependencies": {
+    "blanket": "~1.1.6",
+    "chai": "~1.9.0",
+    "grunt": "~0.4.4",
+    "grunt-blanket": "0.0.8",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-env": "~0.4.1",
+    "grunt-mkdir": "~0.1.1",
+    "grunt-mocha": "~0.4.10",
+    "grunt-mocha-test": "~0.10.0",
+    "load-grunt-tasks": "~0.4.0",
+    "mocha": "~1.18.2",
+    "mocha-cobertura-reporter": "^1.0.4",
+    "nock": "~0.27.2",
+    "supertest": "^0.15.0",
+    "xunit-file": "0.0.5"
+  }
+}
