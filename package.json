@@ -20,6 +20,7 @@
     "body-parser": "~1.0.0",
     "express": "4.9.x",
     "morgan": "^1.0.1",
+    "tumblr.js": "0.0.4",
     "underscore": "1.6.x",
     "winston": "^0.8.3"
   },

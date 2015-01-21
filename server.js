@@ -6,7 +6,7 @@
 var baseHandler = require('./index');
 
 // create my own channel handler which inherits from abstract handler
-var myHandler = new baseHandler.AbstractHandler();
+var myHandler = new baseHandler.MyChannelHandler();
 
 // extend/override the handler as necessary...
 
