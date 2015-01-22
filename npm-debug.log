@@ -1,0 +1,130 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '--save', 'tumblr.js' ]
+2 info using npm@2.1.18
+3 info using node@v0.10.35
+4 verbose node symlink /usr/local/bin/node
+5 warn package.json tpe-channel-base-handler@0.2.3 No README data
+6 silly cache add args [ 'tumblr.js@0.0.4', null ]
+7 verbose cache add spec tumblr.js@0.0.4
+8 silly cache add parsed spec { raw: 'tumblr.js@0.0.4',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'tumblr.js',
+8 silly cache add   rawSpec: '0.0.4',
+8 silly cache add   spec: '0.0.4',
+8 silly cache add   type: 'version' }
+9 verbose addNamed tumblr.js@0.0.4
+10 silly addNamed semver.valid 0.0.4
+11 silly addNamed semver.validRange 0.0.4
+12 silly mapToRegistry name tumblr.js
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/tumblr.js
+16 verbose addNameVersion registry:https://registry.npmjs.org/tumblr.js not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/tumblr.js
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 15:12:24
+20 verbose request id 8f9abb5fe371041a
+21 verbose etag "9Y4OQBLR4SWKV64J4CZE7IH72"
+22 http request GET https://registry.npmjs.org/tumblr.js
+23 http 304 https://registry.npmjs.org/tumblr.js
+24 silly get cb [ 304,
+24 silly get   { date: 'Thu, 22 Jan 2015 20:12:24 GMT',
+24 silly get     server: 'Apache',
+24 silly get     via: '1.1 varnish',
+24 silly get     'last-modified': 'Thu, 22 Jan 2015 20:12:24 GMT',
+24 silly get     'cache-control': 'max-age=60',
+24 silly get     etag: '"9Y4OQBLR4SWKV64J4CZE7IH72"',
+24 silly get     age: '0',
+24 silly get     'x-served-by': 'cache-atl6228-ATL',
+24 silly get     'x-cache': 'MISS',
+24 silly get     'x-cache-hits': '0',
+24 silly get     'x-timer': 'S1421957544.823957,VS0,VE22',
+24 silly get     vary: 'Accept',
+24 silly get     'content-length': '0',
+24 silly get     'keep-alive': 'timeout=10, max=50',
+24 silly get     connection: 'Keep-Alive' } ]
+25 verbose etag https://registry.npmjs.org/tumblr.js from cache
+26 silly cache afterAdd tumblr.js@0.0.4
+27 verbose afterAdd /Users/dharness/.npm/tumblr.js/0.0.4/package/package.json not in flight; writing
+28 verbose afterAdd /Users/dharness/.npm/tumblr.js/0.0.4/package/package.json written
+29 silly install resolved [ { author: { name: 'Tumblr' },
+29 silly install resolved     contributors: [ [Object], [Object] ],
+29 silly install resolved     name: 'tumblr.js',
+29 silly install resolved     description: 'Official JavaScript client for the Tumblr API',
+29 silly install resolved     homepage: 'https://github.com/tumblr/tumblr.js',
+29 silly install resolved     version: '0.0.4',
+29 silly install resolved     repository: { url: 'https://github.com/tumblr/tumblr.js' },
+29 silly install resolved     browserify: 'browser/index.js',
+29 silly install resolved     bin: { tumblr: './bin/repl.js' },
+29 silly install resolved     main: './index',
+29 silly install resolved     dependencies: { request: '2.12.0' },
+29 silly install resolved     devDependencies: { mocha: '*', should: '*' },
+29 silly install resolved     optionalDependencies: {},
+29 silly install resolved     engines: { node: '*' },
+29 silly install resolved     scripts: { test: 'mocha -r should test/*_spec.js' },
+29 silly install resolved     readme: '# tumblr.js\n\n[![Build Status](https://secure.travis-ci.org/tumblr/tumblr.js.png)](http://travis-ci.org/tumblr/tumblr.js)\n\nJavaScript client library for the\n[Tumblr API](http://www.tumblr.com/docs/en/api/v2) /\nnpm: https://npmjs.org/package/tumblr.js\n\n## Create a Client\n\n``` javascript\nvar tumblr = require(\'tumblr.js\');\nvar client = tumblr.createClient({\n  consumer_key: \'<consumer key>\',\n  consumer_secret: \'<consumer secret>\',\n  token: \'<oauth token>\',\n  token_secret: \'<oauth token secret>\'\n});\n```\n\nOr, if you prefer:\n\n``` javascript\nvar tumblr = require(\'tumblr.js\');\nvar client = new tumblr.Client({\n\t// ...\n});\n```\n\n## Example\n\n``` javascript\n// Show user\'s blog names\nclient.userInfo(function (err, data) {\n\tdata.blogs.forEach(function (blog) {\n\t\tconsole.log(blog.name);\n\t});\n});\n```\n\n## Supported Methods\n\n### User Methods\n\n``` javascript\nclient.userInfo(callback);\n\nclient.dashboard(options, callback);\nclient.dashboard(callback);\n\nclient.likes(options, callback);\nclient.likes(callback);\n\nclient.following(options, callback);\nclient.following(callback);\n\nclient.follow(blogURL, callback);\nclient.unfollow(blogURL, callback);\n\nclient.like(id, reblogKey, callback);\nclient.unlike(id, reblogKey, callback);\n```\n\n### Blog Methods\n\n``` javascript\nclient.blogInfo(blogName, callback);\n\nclient.posts(blogName, options, callback);\nclient.posts(blogName, callback);\n\nclient.avatar(blogName, size, callback);\nclient.avatar(blogName, callback);\n\nclient.blogLikes(blogName, options, callback);\nclient.blogLikes(blogName, callback);\n\nclient.followers(blogName, options, callback);\nclient.followers(blogName, callback);\n\nclient.queue(blogName, options, callback);\nclient.queue(blogName, callback);\n\nclient.drafts(blogName, options, callback);\nclient.drafts(blogName, callback);\n\nclient.submissions(blogName, options, callback);\nclient.submissions(blogName, callback);\n```\n\n### Post Methods\n\n``` javascript\nclient.edit(blogName, options, callback);\n\nclient.reblog(blogName, options, callback);\n\nclient.deletePost(blogName, id, callback);\n\nclient.photo(blogName, options, callback);\nclient.quote(blogName, options, callback);\nclient.text(blogName, options, callback);\nclient.link(blogName, options, callback);\nclient.chat(blogName, options, callback);\nclient.audio(blogName, options, callback);\nclient.video(blogName, options, callback);\n```\n\n### Tagged Methods\n\n``` javascript\nclient.tagged(tag, options, callback);\nclient.tagged(tag, callback);\n```\n\n---\n\n## Running tests\n\n``` bash\nmake # run tests\nmake coverage # run coverage report\n```\n\n# Copyright and license\n\nCopyright 2013 Tumblr, Inc.\n\nLicensed under the Apache License, Version 2.0 (the "License"); you may not\nuse this work except in compliance with the License. You may obtain a copy of\nthe License in the LICENSE file, or at:\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an "AS IS" BASIS, WITHOUT\nWARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the\nLicense for the specific language governing permissions and limitations.\n',
+29 silly install resolved     _id: 'tumblr.js@0.0.4',
+29 silly install resolved     dist:
+29 silly install resolved      { shasum: '57f8bc3d2315b45302ba10c2170b5c300aef478c',
+29 silly install resolved        tarball: 'http://registry.npmjs.org/tumblr.js/-/tumblr.js-0.0.4.tgz' },
+29 silly install resolved     _npmVersion: '1.1.62',
+29 silly install resolved     _npmUser: { name: 'seejohnrun', email: 'john.crepezzi@gmail.com' },
+29 silly install resolved     maintainers: [ [Object] ],
+29 silly install resolved     directories: {},
+29 silly install resolved     _shasum: '57f8bc3d2315b45302ba10c2170b5c300aef478c',
+29 silly install resolved     _resolved: 'https://registry.npmjs.org/tumblr.js/-/tumblr.js-0.0.4.tgz',
+29 silly install resolved     _from: 'tumblr.js@0.0.4',
+29 silly install resolved     bugs: { url: 'https://github.com/tumblr/tumblr.js/issues' } } ]
+30 info install tumblr.js@0.0.4 into /Users/dharness/Desktop/tpe-channel-base-handler
+31 info installOne tumblr.js@0.0.4
+32 verbose installOne of tumblr.js to /Users/dharness/Desktop/tpe-channel-base-handler not in flight; installing
+33 verbose lock using /Users/dharness/.npm/_locks/tumblr-js-3570dc6649688d12.lock for /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/tumblr.js
+34 silly install write writing tumblr.js 0.0.4 to /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/tumblr.js
+35 silly cache addNamed cb tumblr.js@0.0.4
+36 verbose unbuild node_modules/tumblr.js
+37 info preuninstall tumblr.js@0.0.4
+38 info uninstall tumblr.js@0.0.4
+39 verbose unbuild rmStuff tumblr.js@0.0.4 from /Users/dharness/Desktop/tpe-channel-base-handler/node_modules
+40 verbose gentlyRm verifying that /Users/dharness/Desktop/tpe-channel-base-handler is managed by npm
+41 silly isManaged /Users/dharness/Desktop/tpe-channel-base-handler is not inside /Users/dharness/Desktop/tpe-channel-base-handler/node_modules
+42 silly isManaged /Users/dharness/Desktop/tpe-channel-base-handler is not inside /Users/dharness/Desktop/tpe-channel-base-handler/node_modules
+43 silly isManaged /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin is inside /Users/dharness/Desktop/tpe-channel-base-handler
+44 silly gentlyRm /Users/dharness/Desktop/tpe-channel-base-handler is managed by npm
+45 silly gentlyRm /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr is under /Users/dharness/Desktop/tpe-channel-base-handler
+46 verbose gentlyRm vacuuming /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr up to /Users/dharness/Desktop/tpe-channel-base-handler
+47 silly gentlyRm removing /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr
+48 verbose unlock done using /Users/dharness/.npm/_locks/tumblr-js-3570dc6649688d12.lock for /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/tumblr.js
+49 verbose stack Error: EACCES, unlink '/Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr'
+50 verbose cwd /Users/dharness/Desktop/tpe-channel-base-handler
+51 error Darwin 14.0.0
+52 error argv "node" "/usr/local/bin/npm" "install" "--save" "tumblr.js"
+53 error node v0.10.35
+54 error npm  v2.1.18
+55 error path /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr
+56 error code EACCES
+57 error errno 3
+58 error Error: EACCES, unlink '/Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr'
+58 error  { [Error: EACCES, unlink '/Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr']
+58 error   errno: 3,
+58 error   code: 'EACCES',
+58 error   path: '/Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr' }
+59 error Please try running this command again as root/Administrator.
+60 verbose exit [ 3, true ]
+61 verbose unbuild node_modules/tumblr.js
+62 info preuninstall tumblr.js@0.0.4
+63 info uninstall tumblr.js@0.0.4
+64 verbose unbuild rmStuff tumblr.js@0.0.4 from /Users/dharness/Desktop/tpe-channel-base-handler/node_modules
+65 verbose gentlyRm verifying that /Users/dharness/Desktop/tpe-channel-base-handler is managed by npm
+66 silly isManaged /Users/dharness/Desktop/tpe-channel-base-handler is not inside /Users/dharness/Desktop/tpe-channel-base-handler/node_modules
+67 silly isManaged /Users/dharness/Desktop/tpe-channel-base-handler is not inside /Users/dharness/Desktop/tpe-channel-base-handler/node_modules
+68 silly isManaged /Users/dharness/Desktop/tpe-channel-base-handler is not inside /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin
+69 silly isManaged /Users/dharness/Desktop/tpe-channel-base-handler is inside /Users/dharness/Desktop/tpe-channel-base-handler
+70 silly gentlyRm /Users/dharness/Desktop/tpe-channel-base-handler is managed by npm
+71 silly gentlyRm /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr is under /Users/dharness/Desktop/tpe-channel-base-handler
+72 verbose gentlyRm vacuuming /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr up to /Users/dharness/Desktop/tpe-channel-base-handler
+73 silly gentlyRm removing /Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr
+74 error error rolling back Error: EACCES, unlink '/Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr'
+74 error error rolling back  { [Error: EACCES, unlink '/Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr']
+74 error error rolling back   errno: 3,
+74 error error rolling back   code: 'EACCES',
+74 error error rolling back   path: '/Users/dharness/Desktop/tpe-channel-base-handler/node_modules/.bin/tumblr' }
