@@ -16,25 +16,31 @@ var logger = require('../lib/util/logger');
  * @param app express application
  * @param {AbstractChannelHandler} handler handler for processing third-party channel requests
  */
-module.exports = function (app, handler) {
+module.exports = function(app, handler) {
 
     if (!handler) {
         throw new Error('Service not found!');
     }
 
-    app.post('/accept', function (req, res) {
+    app.post('/accept', function(req, res) {
         logger.debug("accept:", req.body);
         var accepted = handler.accept(req.body);
         logger.debug("accepted:", accepted);
-        console.log (res)
-        res.status(200).send({accepted: accepted});
+        console.log(res)
+        res.status(200).send({
+            accepted: accepted
+        });
     });
 
     app.post('/deliver', function(req, res, next) {
+        console.log('in post');
         handler.deliver(req.body.params, req.body.playlist, function(err, result) {
+
             if (err) {
+                console.log(err);
                 next(err);
             } else {
+                console.log(result);
                 logger.debug("delivered:", result);
                 res.status(200).send(result);
             }
