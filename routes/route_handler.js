@@ -33,16 +33,21 @@ module.exports = function(app, handler) {
     });
 
     app.post('/deliver', function(req, res, next) {
-        console.log('in post');
+
         handler.deliver(req.body.params, req.body.playlist, function(err, result) {
 
             if (err) {
                 console.log(err);
                 next(err);
             } else {
-                console.log(result);
+
+                var resMap = {
+                    "scObjectId": req.body.playlist[0].scObj.id,
+                    'postId': result.id
+                };
+
                 logger.debug("delivered:", result);
-                res.status(200).send(result);
+                res.status(200).send(resMap);
             }
         });
     });
