@@ -41,7 +41,7 @@ module.exports = function(app, handler) {
                 next(err);
             } else {
 
-                var resMap = {
+                var resMap = { // HACK but a small one, since result does not contain this functionality 
                     "scObjectId": req.body.playlist[0].scObj.id,
                     'postId': result.id
                 };
