@@ -54,6 +54,7 @@ module.exports = function(app, handler) {
 
     app.post('/feedback', function(req, res, next) {
         handler.getFeedback(req.body, function(err, feedback) {
+            console.log(feedback);
             if (err) {
                 next(err);
             } else {
