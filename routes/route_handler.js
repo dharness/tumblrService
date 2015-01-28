@@ -46,7 +46,7 @@ module.exports = function(app, handler) {
                     'postId': result.id
                 };
 
-                logger.debug("delivered:", result);
+                logger.debug("delivered:", resMap);
                 res.status(200).send(resMap);
             }
         });
@@ -64,12 +64,12 @@ module.exports = function(app, handler) {
     });
 
     app.post('/remove', function(req, res, next) {
-        logger.debug("remove: ", req.body);
-        handler.remove(req.body, function(err) {
+
+        handler.remove(req.body.scInstances.postId, function(err) {
             if (err) {
                 next(err);
             } else {
-                res.status(200).send();
+                res.status(200).send('200 ok');
             }
         });
     });
