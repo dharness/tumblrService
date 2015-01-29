@@ -12,6 +12,7 @@ module.exports = {
     serviceTemplate: require('./lib/service-template'),
     handlerRoute: require('./routes/route_handler'),
     AbstractHandler: require('./lib/abstract-channel-handler'),
+    xKBAdapter: require('./lib/xKBAdapter'),
     MyChannelHandler: require('./lib/concrete-channel-handler'),
 
     // utilities for third-party handlers
