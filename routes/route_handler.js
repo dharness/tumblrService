@@ -53,7 +53,7 @@ module.exports = function(app, handler) {
 
     app.post('/feedback', function(req, res, next) {
         handler.getFeedback(req.body, function(err, feedback) {
-            console.log(feedback);
+
             if (err) {
                 next(err);
             } else {
@@ -64,6 +64,8 @@ module.exports = function(app, handler) {
     });
 
     app.post('/remove', function(req, res, next) {
+
+        console.log(req);
 
         handler.remove(req.body.scInstances.postId, function(err) {
             if (err) {
