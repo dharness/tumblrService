@@ -67,7 +67,7 @@ module.exports = function(app, handler) {
 
         console.log(req);
 
-        handler.remove(req.body.scInstances.postId, function(err) {
+        handler.remove(req.body[0].postId, function(err) {
             if (err) {
                 next(err);
             } else {
