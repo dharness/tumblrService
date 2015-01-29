@@ -45,7 +45,8 @@ module.exports = function(app, handler) {
                     'postId': result.id
                 };
 
-                logger.debug("delivered:", resMap);
+                console.log("delivered:");
+                console.log(resMap);
                 res.status(200).send(resMap);
             }
         });
